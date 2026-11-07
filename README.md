@@ -1,80 +1,87 @@
-# IA 365 modelos
+# IA 365 models
 
-Serie de publicaciones en LinkedIn para divulgar modelos generativos: uno por día, aproximadamente.
+A series of LinkedIn posts explaining generative models: one about every day.
 
-## Objetivo
+> Spanish copy of the full repository: [`es/`](es/README.md)
 
-Explicar qué es cada modelo, con datos verificados, de forma que cualquiera lo entienda y pueda decidir si le sirve. Cada publicación sale de un artículo en esta carpeta.
+## Goal
 
-## Qué se cuenta de cada modelo
+Explain what each model is, with verified data, so that anyone can understand it and decide whether it is useful to them. Each post comes from a full article in this folder.
 
-1. **Qué es**: tipo (texto, imagen, vídeo, audio, multimodal, embeddings) y tarea principal.
-2. **Tecnología**: arquitectura (transformer, difusión, MoE…), lenguaje de implementación y librerías.
-3. **Tamaño**: parámetros, contexto máximo y formato de pesos.
-4. **Hardware mínimo**: RAM/VRAM aproximada para ejecutarlo, con el método de cálculo indicado.
-5. **Interfaces**: cómo se usa (API, Python, UI, CLI, ComfyUI…).
-6. **Quién lo usa y para qué**: casos reales o proyectos conocidos.
-7. **Por qué importa**: qué aporta frente a alternativas.
-8. **Quién está detrás**: organización y autores.
-9. **Curiosidades**.
-10. **Pokémon**: asociación para el gancho visual (ver convención abajo).
+## What is covered for each model
 
-## Convenciones
+1. **What it is**: type (text, image, video, audio, multimodal, embeddings) and main task.
+2. **Technology**: architecture (transformer, diffusion, MoE…), implementation language and libraries.
+3. **Size**: parameters, maximum context and weight format.
+4. **Minimum hardware**: approximate RAM/VRAM needed to run it, with the calculation method stated.
+5. **Interfaces**: how it is used (API, Python, UI, CLI, ComfyUI…).
+6. **Who uses it and for what**: real cases or known projects.
+7. **Why it matters**: what it offers compared with alternatives.
+8. **Who is behind it**: organization and authors.
+9. **Curiosities**.
+10. **Pokémon**: association used for the visual hook (see the conventions below).
 
-- **Verificación**: cada dato sale de la ficha del modelo en Hugging Face u otra fuente oficial, citada en el artículo. Lo que sea estimación se marca como estimación. Si algo no está verificado, se pone como pendiente.
-- **Licencia**: se indica explícitamente, porque condiciona el uso comercial.
-- **Fecha de snapshot**: los datos de descargas o popularidad cambian; se indica la fecha de consulta.
-- **Idioma**: español.
-- **Pokémon**: cada modelo recibe un Pokémon cuyo tipo o rasgo encaje con lo que hace el modelo (por ejemplo, un TTS puede ser un Pokémon "de voz"). La asociación es un recurso de divulgación; no implica relación oficial con The Pokémon Company ni con Nintendo. Pokémon es marca registrada de sus propietarios: no se usan sprites ni artes oficiales en las publicaciones, solo el nombre y la idea.
-- **Formato LinkedIn**: un gancho en la primera línea, 4–6 bloques cortos, un dato de hardware destacado y un enlace a la ficha. Sin más de 3 hashtags.
+## Conventions
 
-## Código de identificación
+- **Verification**: every data point comes from the model card on Hugging Face or another official source, cited in the article. Anything that is an estimate is marked as such. Anything not verified is listed as pending.
+- **License**: stated explicitly, because it determines commercial use.
+- **Snapshot date**: download and popularity figures change; the consultation date is recorded.
+- **Language**: English. The full article in `posts/` is the source of truth; `catalogue/` holds the LinkedIn summaries.
+- **Pokémon**: each model is given a Pokémon whose type or trait fits what the model does (for example, a TTS model can be a "voice" Pokémon). The association is an educational resource; it does not imply any official relationship with The Pokémon Company or Nintendo. Pokémon is a registered trademark of its owners: no sprites or official artwork are used in the posts, only the name and the idea.
+- **LinkedIn format**: a hook on the first line, 4–6 short blocks, one highlighted hardware figure and a link to the model card. No more than 3 hashtags.
 
-Cada modelo tiene un código corto, `CC-TIER-FAM-NNN`, que se escribe en la cabecera del artículo, en la plantilla y en `indice.md`:
+## Identification code
 
-- **CC** (catálogo, dos dígitos): categoría del catálogo del vault, de `01` a `08` (01 Texto y LLMs, 02 Embeddings y RAG, 03 NLP clásico, 04 Voz y audio, 05 Imagen, vídeo y 3D, 06 Multimodal, 07 Series temporales, 08 Sin etiqueta).
-- **TIER** (parámetros): `UB` ≥ 100 B, `OU` 14–100 B, `UU` 4–14 B, `RU` 1–4 B, `NU` < 1 B.
-- **FAM** (familia): `S` Starter, `L` Legendary, `M` Mythical, `B` Ultra Beast, `P` Paradox.
-- **NNN**: número del artículo. El nombre del archivo empieza por NNN, seguido del código y del slug del modelo.
+Each model has a short code, `CC-TIER-FAM-NNN`, which is written in the header of the article, in the template and in `indice.md`:
 
-Ejemplo: `01-UU-S-002` es Qwen3-8B (texto, 8,2 B, Starter).
+- **CC** (catalogue, two digits): category of the vault catalogue, from `01` to `08` (01 Text and LLMs, 02 Embeddings and RAG, 03 Classic NLP, 04 Voice and audio, 05 Image, video and 3D, 06 Multimodal, 07 Time series, 08 Unlabeled).
+- **TIER** (parameters): `UB` ≥ 100 B, `OU` 14–100 B, `UU` 4–14 B, `RU` 1–4 B, `NU` < 1 B.
+- **FAM** (family): `S` Starter, `L` Legendary, `M` Mythical, `B` Ultra Beast, `P` Paradox.
+- **NNN**: article number. The file name starts with NNN, followed by the code and the model slug.
 
-## Estructura
+Example: `01-UU-S-002` is Qwen3-8B (text, 8.2 B, Starter).
 
-- `README.md`: este documento.
-- `plantilla.md`: plantilla para cada artículo.
-- `indice.md`: calendario y estado de cada modelo.
-- `posts/`: un archivo por modelo, con nombre `NNN-CC-TIER-FAM-slug-del-modelo.md`.
+## Structure
 
-## Origen de los modelos
+- `README.md`: this document.
+- `plantilla.md`: template for each article.
+- `indice.md`: schedule and status of each model.
+- `posts/`: one file per model, named `NNN-CC-TIER-FAM-model-slug.md`.
+- `catalogue/`: English LinkedIn summaries, one per model, ready to publish.
+- `carta/`: LaTeX model cards (one per model; `carta/pruebas/` holds test cards).
+- `glosario.md`: glossary of technical terms.
+- `es/`: complete Spanish copy of the repository, for reading.
 
-Se parte del catálogo del vault (`IA_Agentica/HuggingFace`), que lista los modelos más descargados del Hub. Los modelos de la serie se pueden elegir de ahí o de otras fuentes; cada artículo indica de dónde sale.
+## Origin of the models
 
-## Glosario
+The series starts from the vault catalogue (`IA_Agentica/HuggingFace`), which lists the most downloaded models on the Hub. Models for the series can be chosen from there or from other sources; each article states where it came from.
 
-`glosario.md` explica los términos técnicos que aparecen en los artículos (TTS, ISTFTNet, GQA, KV cache, cuantización…), con enlaces a los artículos donde se usan. Hay que mantenerlo al añadir un artículo nuevo.
+## Glossary
 
-## Idioma
+`glosario.md` explains the technical terms that appear in the articles (TTS, ISTFTNet, GQA, KV cache, quantization…), with links to the articles where they are used. It must be kept up to date when a new article is added.
 
-- Artículo completo (`posts/`): español, fuente de verdad.
-- Versión para publicar (`linkedin_en/`): inglés, resumen del artículo completo.
+## Language
 
-## Equipo de trabajo
+- Full article (`posts/`): English, source of truth.
+- Publishing version (`catalogue/`): English, summary of the full article.
+- Spanish copy: [`es/`](es/).
 
-Equipo donde se ejecutan las pruebas de la serie (`lab-tts/` y los siguientes labs):
+## Work environment
 
-| Componente | Detalle |
-|------------|---------|
-| Equipo | Portátil con Windows 11 Home (10.0.26200) |
-| CPU | Intel Core i7-1355U (13.ª generación), 10 núcleos y 12 hilos |
-| RAM | 16 GB (15,7 GB utilizables), 3200 MHz |
-| GPU | Intel UHD Graphics integrada, sin CUDA. Usa memoria compartida con la RAM del sistema |
-| Disco | C: de 952,5 GB, con 528,8 GB libres (dato de la fecha de consulta) |
-| Python | 3.12.10 (instalado en el sistema) |
+Machine where the tests for the series are run (`lab-tts/` and the following labs):
+
+| Component | Detail |
+|-----------|--------|
+| Machine | Windows 11 Home (10.0.26200) laptop |
+| CPU | Intel Core i7-1355U (13th generation), 10 cores and 12 threads |
+| RAM | 16 GB (15.7 GB usable), 3200 MHz |
+| GPU | Integrated Intel UHD Graphics, no CUDA. Shares memory with system RAM |
+| Disk | C: 952.5 GB, 528.8 GB free (figure as of the consultation date) |
+| Python | 3.12.10 (installed on the system) |
 | Git | 2.46.0 |
 
-Consecuencias para los artículos:
+Consequences for the articles:
 
-- Todos los modelos de la serie que se prueben aquí corren en CPU. Los modelos de más de unos pocos miles de millones de parámetros no caben en la RAM disponible en BF16.
-- El hardware mínimo que cite un artículo debe marcarse como **estimación** si no se ha medido en este equipo.
-- Para modelos grandes (por ejemplo, Qwen3-8B), la prueba se hará con una versión más pequeña o cuantizada, o en otra máquina con GPU NVIDIA.
+- All series models tested here run on CPU. Models with more than a few billion parameters do not fit in the available RAM in BF16.
+- Minimum hardware cited in an article must be marked as an **estimate** if it has not been measured on this machine.
+- For large models (for example, Qwen3-8B), testing will be done with a smaller or quantized version, or on another machine with an NVIDIA GPU.

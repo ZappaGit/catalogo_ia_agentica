@@ -1,13 +1,13 @@
-% Carta de modelo - IA 365 modelos
-% Carta de prueba (imagen-z-image-turbo). Compilar con: pdflatex imagen-z-image-turbo.tex
-% Solo edita el bloque "Datos de la carta". No uses sprites, artes ni logos oficiales de Pokémon.
+% Model card · IA 365 models
+% Test card (imagen-z-image-turbo). Compile with: pdflatex imagen-z-image-turbo.tex
+% Only edit the "Card data" block. Do not use official Pokémon sprites, artwork or logos.
 \documentclass[tikz,border=4mm]{standalone}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{xcolor}
 
-% ----- Datos de la carta (edita aquí) -----
+% ----- Card data (edit here) -----
 \newcommand{\cardid}{P1/5 - imagen}
 \newcommand{\cardname}{Z-Image-Turbo}
 \newcommand{\cardparams}{6\,B}
@@ -22,9 +22,9 @@
 \newcommand{\cardflavor}{An image model that draws in 8 steps.}
 \newcommand{\cardlicense}{Apache 2.0}
 \newcommand{\cardsource}{hf.co/Tongyi-MAI/Z-Image-Turbo}
-\newcommand{\cardart}{\artimage}  % tipo de ilustración: \artwave \arttext \artimage \artvideo \artmulti \artembed \art3d
+\newcommand{\cardart}{\artimage}  % illustration type: \artwave \arttext \artimage \artvideo \artmulti \artembed \art3d
 
-% Color de prueba del marco (solo para comparar el diseño)
+% Test frame colour (only to compare the design)
 \definecolor{famcolor}{HTML}{7A3E9D}
 \definecolor{cardbg}{HTML}{FFF8E7}
 \definecolor{artbg}{HTML}{DDEBF7}
@@ -34,41 +34,41 @@
   \def\W{6.3}
   \def\H{9.4}
 
-  % Marco y fondo
+  % Frame and background
   \fill[famcolor, rounded corners=6pt] (0,0) rectangle (\W,\H);
   \fill[cardbg, rounded corners=4pt] (0.15,0.15) rectangle (\W-0.15,\H-0.15);
 
-  % Cabecera: nombre, línea y parámetros
+  % Header: name, line and parameters
   \node[anchor=west, font=\bfseries\large] at (0.35,\H-0.55) {\cardname};
   \node[anchor=west, font=\scriptsize] at (0.35,\H-0.95) {Line: \cardline};
   \fill[famcolor] (\W-0.55,\H-0.55) circle (0.42);
   \node[white, align=center, font=\bfseries\scriptsize] at (\W-0.55,\H-0.55) {\cardparams\\[-3pt]{\tiny params}};
 
-  % Ilustración según el tipo de modelo (\cardart): onda, texto, imagen, vídeo, multimodal, embeddings o 3D
+  % Illustration by model type (\cardart): wave, text, image, video, multimodal, embeddings or 3D
   \def\artwave{wave}\def\arttext{text}\def\artimage{image}\def\artvideo{video}
   \def\artmulti{multi}\def\artembed{embed}\def\art3d{threed}
   \fill[artbg] (0.35,\H-4.0) rectangle (\W-0.35,\H-1.25);
   \begin{scope}
     \clip (0.35,\H-4.0) rectangle (\W-0.35,\H-1.25);
     \expandafter\ifx\cardart\artwave
-      % Audio (TTS): forma de onda
+      % Audio (TTS): waveform
       \draw[famcolor!70!black, thick, domain=0.35:\W-0.35, samples=150, smooth]
         plot (\x, {\H-2.62+0.5*sin(deg(10*\x))*exp(-0.08*(\x-0.35))});
     \else\expandafter\ifx\cardart\arttext
-      % Texto: líneas de caracteres
+      % Text: lines of characters
       \node[font=\ttfamily\small, text=famcolor!80!black, anchor=west] at (0.7,\H-1.8) {Once upon a time,};
       \node[font=\ttfamily\small, text=famcolor!80!black, anchor=west] at (0.7,\H-2.25) {the model reads one};
       \node[font=\ttfamily\small, text=famcolor!80!black, anchor=west] at (0.7,\H-2.7) {token at a time and};
       \node[font=\ttfamily\small, text=famcolor!80!black, anchor=west] at (0.7,\H-3.15) {writes the next one.};
       \node[font=\ttfamily\small, text=famcolor!80!black, anchor=west] at (0.7,\H-3.6) {Aa Bb Cc Dd Ee Ff};
     \else\expandafter\ifx\cardart\artimage
-      % Imagen: paisaje (cielo, sol y montañas)
+      % Image: landscape (sky, sun and mountains)
       \fill[famcolor!25!white] (0.35,\H-4.0) rectangle (\W-0.35,\H-1.25);
       \fill[famcolor!45!white] (4.7,\H-2.1) circle (0.55);
       \fill[famcolor!65!black] (0.35,\H-4.0) -- (2.0,\H-2.75) -- (3.6,\H-4.0) -- cycle;
       \fill[famcolor!85!black] (2.7,\H-4.0) -- (4.4,\H-2.5) -- (\W-0.35,\H-4.0) -- cycle;
     \else\expandafter\ifx\cardart\artvideo
-      % Vídeo: tira de película con tres fotogramas
+      % Video: film strip with three frames
       \fill[black!85] (0.35,\H-4.0) rectangle (\W-0.35,\H-1.25);
       \foreach \fx in {0.8,2.45,4.1}{
         \fill[famcolor!50!white] (\fx,\H-3.55) rectangle (\fx+1.45,\H-1.95);
@@ -79,7 +79,7 @@
         \fill[white] (\sx,\H-3.8) rectangle (\sx+0.18,\H-3.95);
       }
     \else\expandafter\ifx\cardart\artmulti
-      % Multimodal: texto a la izquierda, imagen a la derecha
+      % Multimodal: text on the left, image on the right
       \node[font=\ttfamily\tiny, text=famcolor!80!black, anchor=west] at (0.6,\H-2.1) {Describe this:};
       \node[font=\ttfamily\tiny, text=famcolor!80!black, anchor=west] at (0.6,\H-2.5) {a red bicycle};
       \node[font=\ttfamily\tiny, text=famcolor!80!black, anchor=west] at (0.6,\H-2.9) {in a park.};
@@ -87,12 +87,12 @@
       \fill[famcolor!65!black] (3.5,\H-3.7) -- (4.6,\H-2.7) -- (5.7,\H-3.7) -- cycle;
       \fill[famcolor!45!white] (5.0,\H-2.4) circle (0.2);
     \else\expandafter\ifx\cardart\artembed
-      % Embeddings: dos grupos de puntos en el espacio vectorial
+      % Embeddings: two groups of points in vector space
       \foreach \x/\y in {1.2/2.4, 1.5/2.8, 1.9/2.5, 1.4/3.1, 1.8/3.2}{ \fill[famcolor] (\x,\H-\y) circle (0.07); }
       \foreach \x/\y in {4.2/2.1, 4.6/2.6, 4.9/2.2, 4.4/3.0, 4.8/3.3}{ \fill[famcolor!70!black] (\x,\H-\y) circle (0.07); }
       \draw[famcolor, thin, dashed] (1.9,\H-2.5) -- (4.2,\H-2.1);
     \else\expandafter\ifx\cardart\art3d
-      % 3D: cubo isométrico
+      % 3D: isometric cube
       \fill[famcolor!30!white] (2.9,7.85) -- (3.85,7.35) -- (2.9,6.85) -- (1.95,7.35) -- cycle;
       \fill[famcolor!60!black] (1.95,7.35) -- (2.9,6.85) -- (2.9,5.55) -- (1.95,6.05) -- cycle;
       \fill[famcolor!80!white] (2.9,6.85) -- (3.85,7.35) -- (3.85,6.05) -- (2.9,5.55) -- cycle;
@@ -102,7 +102,7 @@
     \fi\fi\fi\fi\fi\fi
   \end{scope}
 
-  % Tipo y categoría
+  % Type and category
   \node[anchor=west, font=\scriptsize] at (0.35,\H-4.45) {\textbf{Type:} \cardmodality \quad \textbf{Category:} \cardcategory};
 
   % Habilidad
@@ -111,11 +111,11 @@
   \node[anchor=west, font=\scriptsize\bfseries, text=famcolor!80!black] at (0.5,\H-5.1) {Ability: Architecture};
   \node[anchor=north west, text width=5.2cm, font=\scriptsize] at (0.5,\H-5.25) {\cardability};
 
-  % Hardware mínimo (ataque)
+  % Minimum hardware (attack)
   \node[anchor=west, font=\scriptsize\bfseries] at (0.35,\H-6.35) {Min. hardware};
   \node[anchor=west, font=\scriptsize] at (0.35,\H-6.68) {\cardhardware};
 
-  % Debilidad, resistencia y retirada
+  % Weakness, resistance and retreat
   \node[anchor=west, font=\tiny] at (0.35,\H-7.05) {\textbf{Weakness:} \cardweak};
   \node[anchor=west, font=\tiny] at (0.35,\H-7.35) {\textbf{Resistance:} \cardstrong};
   \node[anchor=west, font=\tiny] at (0.35,\H-7.65) {\textbf{Retreat:}};

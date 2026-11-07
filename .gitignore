@@ -1,19 +1,19 @@
-# Laboratorios locales (entornos virtuales, repos anidados y audios generados): no forman parte del repo
+# Local labs (virtual environments, nested repos and generated audio): not part of the repo
 lab-llm/
 lab-tts/
 
-# Python / entornos
+# Python / environments
 .venv/
 __pycache__/
 *.pyc
 
-# Compilación LaTeX
+# LaTeX build files
 *.aux
 *.log
 *.out
 *.synctex.gz
 
-# Editores y sistema
+# Editors and system
 .obsidian/
 .DS_Store
 Thumbs.db

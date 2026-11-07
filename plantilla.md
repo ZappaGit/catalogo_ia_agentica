@@ -1,84 +1,84 @@
-# {Nº} · {Nombre del modelo}
+# {No.} · {Model name}
 
-**Fuente principal:** {enlace a la ficha oficial}
-**Licencia:** {licencia}
-**Consultado:** {AAAA-MM-DD}
-**Código:** {CC-TIER-FAM-NNN} (catálogo {CC} {nombre de la categoría} · {TIER} · {familia}; ver [README.md](README.md))
-**Pokémon asociado:** {nombre} — {por qué encaja}
-
----
-
-## Texto de LinkedIn
-
-{Gancho de una línea.}
-
-{Qué es, en 2 frases.}
-
-🔧 **Tipo y tecnología:** {tipo, arquitectura, lenguaje de implementación y librerías}
-📏 **Tamaño:** {parámetros, contexto, formato de pesos}
-💻 **Hardware mínimo:** {RAM/VRAM aproximada} *(estimación: {método})*
-🛠️ **Interfaces:** {cómo se usa: Python, API, UI, CLI, ComfyUI…}
-👥 **Quién lo usa y para qué:** {casos reales o proyectos conocidos}
-💡 **Por qué importa:** {una frase, frente a alternativas}
-🏢 **Detrás del modelo:** {organización / autores}
-🤓 **Curiosidad:** {dato}
-
-Ficha y demo: {enlace a la ficha}
-
-{Hashtags: máximo 3}
+**Main source:** {link to the official model card}
+**License:** {license}
+**Consulted:** {YYYY-MM-DD}
+**Code:** {CC-TIER-FAM-NNN} (catalogue {CC} {category name} · {TIER} · {family}; see [README.md](README.md))
+**Associated Pokémon:** {name} — {why it fits}
 
 ---
 
-## Ajustes y uso *(opcional)*
+## LinkedIn text
 
-{Opciones que cambian el resultado: idioma, modo, muestreo, velocidad, longitud… Un punto por ajuste, con el valor recomendado por la fuente y su cita.}
+{One-line hook.}
 
-## Hardware mínimo *(opcional)*
+{What it is, in 2 sentences.}
 
-| Configuración | Memoria | Cálculo | Recomendado |
-|---------------|---------|---------|-------------|
-| {precisión o variante} | {GB} | {método} | {GPU o equipo} |
+🔧 **Type and technology:** {type, architecture, implementation language and libraries}
+📏 **Size:** {parameters, context, weight format}
+💻 **Minimum hardware:** {approximate RAM/VRAM} *(estimate: {method})*
+🛠️ **Interfaces:** {how it is used: Python, API, UI, CLI, ComfyUI…}
+👥 **Who uses it and for what:** {real cases or known projects}
+💡 **Why it matters:** {one sentence, compared with alternatives}
+🏢 **Behind the model:** {organization / authors}
+🤓 **Curiosity:** {fact}
 
-{Notas sobre contextos largos, CPU frente a GPU, etc.}
+Model card and demo: {link to the model card}
 
-## Cómo ejecutarlo *(opcional)*
+{Hashtags: maximum 3}
 
-**Estado: {sin probar / probado en el equipo}.** {Qué se ha comprobado y qué no. Si no se ha ejecutado, decirlo.}
+---
 
-### a. Requisitos previos
-- {Python, sistema operativo, GPU/CPU, RAM}
+## Settings and usage *(optional)*
 
-### b. Entorno virtual
-{Comandos en PowerShell; Git Bash o WSL si aplica.}
+{Options that change the result: language, mode, sampling, speed, length… One point per setting, with the value recommended by the source and its citation.}
 
-### c. Instalación
-{Comandos de instalación con versiones mínimas.}
+## Minimum hardware *(optional)*
 
-### d. Ejemplo mínimo
-{Código y cómo ejecutarlo. Guardar fuera del proyecto y sin claves en el código.}
+| Configuration | Memory | Calculation | Recommended |
+|---------------|--------|-------------|-------------|
+| {precision or variant} | {GB} | {method} | {GPU or machine} |
 
-### e. Comprobación
-{Resultado esperado.}
+{Notes on long contexts, CPU versus GPU, etc.}
 
-### f. Avisos
-- **Descarga:** {tamaño y caché}
-- **Licencia:** {condiciones de acceso}
-- **Hardware:** {requisitos reales frente a los teóricos}
+## How to run it *(optional)*
 
-## Notas de verificación
+**Status: {untested / tested on the machine}.** {What has been checked and what has not. If it has not been run, say so.}
 
-| Dato | Valor | Fuente | ¿Verificado? |
-|------|-------|--------|--------------|
-| Parámetros | | | |
-| Licencia | | | |
-| Arquitectura | | | |
-| Lenguaje / librerías | | | |
-| Versión y fecha | | | |
-| Tamaño de pesos | | | |
-| Hardware | | | estimación |
-| Autores / organización | | | |
-| Descargas / popularidad | | | (snapshot {AAAA-MM-DD}) |
+### a. Prerequisites
+- {Python, operating system, GPU/CPU, RAM}
 
-## Pendiente
+### b. Virtual environment
+{PowerShell commands; Git Bash or WSL if applicable.}
 
-- {Datos sin verificar o dudosos, si los hay.}
+### c. Installation
+{Installation commands with minimum versions.}
+
+### d. Minimal example
+{Code and how to run it. Save it outside the project and without keys in the code.}
+
+### e. Check
+{Expected result.}
+
+### f. Warnings
+- **Download:** {size and cache}
+- **License:** {access conditions}
+- **Hardware:** {real requirements versus theoretical ones}
+
+## Verification notes
+
+| Data | Value | Source | Verified? |
+|------|-------|--------|-----------|
+| Parameters | | | |
+| License | | | |
+| Architecture | | | |
+| Language / libraries | | | |
+| Version and date | | | |
+| Weight size | | | |
+| Hardware | | | estimate |
+| Authors / organization | | | |
+| Downloads / popularity | | | (snapshot {YYYY-MM-DD}) |
+
+## Pending
+
+- {Unverified or doubtful data, if any.}

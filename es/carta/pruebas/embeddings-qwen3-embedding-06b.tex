@@ -1,0 +1,135 @@
+% Carta de modelo - IA 365 modelos
+% Carta de prueba (embeddings-qwen3-embedding-06b). Compilar con: pdflatex embeddings-qwen3-embedding-06b.tex
+% Solo edita el bloque "Datos de la carta". No uses sprites, artes ni logos oficiales de Pokémon.
+\documentclass[tikz,border=4mm]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{xcolor}
+
+% ----- Datos de la carta (edita aquí) -----
+\newcommand{\cardid}{P4/5 - embeddings}
+\newcommand{\cardname}{Qwen3-Embedding-0.6B}
+\newcommand{\cardparams}{0.6\,B}
+\newcommand{\cardline}{Qwen3 Embedding}
+\newcommand{\cardmodality}{Text embeddings}
+\newcommand{\cardcategory}{Starter}
+\newcommand{\cardability}{Dense encoder, up to 1024 dims}
+\newcommand{\cardhardware}{CPU, about 1.5 GB (est.)}
+\newcommand{\cardweak}{Text only}
+\newcommand{\cardstrong}{Small, 32k context}
+\newcommand{\cardretreat}{1}
+\newcommand{\cardflavor}{Turns text into vectors for search.}
+\newcommand{\cardlicense}{Apache 2.0}
+\newcommand{\cardsource}{hf.co/Qwen/Qwen3-Embedding-0.6B}
+\newcommand{\cardart}{\artembed}  % tipo de ilustración: \artwave \arttext \artimage \artvideo \artmulti \artembed \art3d
+
+% Color de prueba del marco (solo para comparar el diseño)
+\definecolor{famcolor}{HTML}{1E8449}
+\definecolor{cardbg}{HTML}{FFF8E7}
+\definecolor{artbg}{HTML}{DDEBF7}
+
+\begin{document}
+\begin{tikzpicture}
+  \def\W{6.3}
+  \def\H{9.4}
+
+  % Marco y fondo
+  \fill[famcolor, rounded corners=6pt] (0,0) rectangle (\W,\H);
+  \fill[cardbg, rounded corners=4pt] (0.15,0.15) rectangle (\W-0.15,\H-0.15);
+
+  % Cabecera: nombre, línea y parámetros
+  \node[anchor=west, font=\bfseries\large] at (0.35,\H-0.55) {\cardname};
+  \node[anchor=west, font=\scriptsize] at (0.35,\H-0.95) {Line: \cardline};
+  \fill[famcolor] (\W-0.55,\H-0.55) circle (0.42);
+  \node[white, align=center, font=\bfseries\scriptsize] at (\W-0.55,\H-0.55) {\cardparams\\[-3pt]{\tiny params}};
+
+  % Ilustración según el tipo de modelo (\cardart): onda, texto, imagen, vídeo, multimodal, embeddings o 3D
+  \def\artwave{wave}\def\arttext{text}\def\artimage{image}\def\artvideo{video}
+  \def\artmulti{multi}\def\artembed{embed}\def\art3d{threed}
+  \fill[artbg] (0.35,\H-4.0) rectangle (\W-0.35,\H-1.25);
+  \begin{scope}
+    \clip (0.35,\H-4.0) rectangle (\W-0.35,\H-1.25);
+    \expandafter\ifx\cardart\artwave
+      % Audio (TTS): forma de onda
+      \draw[famcolor!70!black, thick, domain=0.35:\W-0.35, samples=150, smooth]
+        plot (\x, {\H-2.62+0.5*sin(deg(10*\x))*exp(-0.08*(\x-0.35))});
+    \else\expandafter\ifx\cardart\arttext
+      % Texto: líneas de caracteres
+      \node[font=\ttfamily\small, text=famcolor!80!black, anchor=west] at (0.7,\H-1.8) {Once upon a time,};
+      \node[font=\ttfamily\small, text=famcolor!80!black, anchor=west] at (0.7,\H-2.25) {the model reads one};
+      \node[font=\ttfamily\small, text=famcolor!80!black, anchor=west] at (0.7,\H-2.7) {token at a time and};
+      \node[font=\ttfamily\small, text=famcolor!80!black, anchor=west] at (0.7,\H-3.15) {writes the next one.};
+      \node[font=\ttfamily\small, text=famcolor!80!black, anchor=west] at (0.7,\H-3.6) {Aa Bb Cc Dd Ee Ff};
+    \else\expandafter\ifx\cardart\artimage
+      % Imagen: paisaje (cielo, sol y montañas)
+      \fill[famcolor!25!white] (0.35,\H-4.0) rectangle (\W-0.35,\H-1.25);
+      \fill[famcolor!45!white] (4.7,\H-2.1) circle (0.55);
+      \fill[famcolor!65!black] (0.35,\H-4.0) -- (2.0,\H-2.75) -- (3.6,\H-4.0) -- cycle;
+      \fill[famcolor!85!black] (2.7,\H-4.0) -- (4.4,\H-2.5) -- (\W-0.35,\H-4.0) -- cycle;
+    \else\expandafter\ifx\cardart\artvideo
+      % Vídeo: tira de película con tres fotogramas
+      \fill[black!85] (0.35,\H-4.0) rectangle (\W-0.35,\H-1.25);
+      \foreach \fx in {0.8,2.45,4.1}{
+        \fill[famcolor!50!white] (\fx,\H-3.55) rectangle (\fx+1.45,\H-1.95);
+        \fill[famcolor!75!black] (\fx+0.725,\H-2.75) circle (0.28);
+      }
+      \foreach \sx in {0.5,0.95,1.4,1.85,2.3,2.75,3.2,3.65,4.1,4.55,5.0,5.45,5.9}{
+        \fill[white] (\sx,\H-1.6) rectangle (\sx+0.18,\H-1.45);
+        \fill[white] (\sx,\H-3.8) rectangle (\sx+0.18,\H-3.95);
+      }
+    \else\expandafter\ifx\cardart\artmulti
+      % Multimodal: texto a la izquierda, imagen a la derecha
+      \node[font=\ttfamily\tiny, text=famcolor!80!black, anchor=west] at (0.6,\H-2.1) {Describe this:};
+      \node[font=\ttfamily\tiny, text=famcolor!80!black, anchor=west] at (0.6,\H-2.5) {a red bicycle};
+      \node[font=\ttfamily\tiny, text=famcolor!80!black, anchor=west] at (0.6,\H-2.9) {in a park.};
+      \fill[famcolor!25!white] (3.5,\H-3.7) rectangle (5.7,\H-1.8);
+      \fill[famcolor!65!black] (3.5,\H-3.7) -- (4.6,\H-2.7) -- (5.7,\H-3.7) -- cycle;
+      \fill[famcolor!45!white] (5.0,\H-2.4) circle (0.2);
+    \else\expandafter\ifx\cardart\artembed
+      % Embeddings: dos grupos de puntos en el espacio vectorial
+      \foreach \x/\y in {1.2/2.4, 1.5/2.8, 1.9/2.5, 1.4/3.1, 1.8/3.2}{ \fill[famcolor] (\x,\H-\y) circle (0.07); }
+      \foreach \x/\y in {4.2/2.1, 4.6/2.6, 4.9/2.2, 4.4/3.0, 4.8/3.3}{ \fill[famcolor!70!black] (\x,\H-\y) circle (0.07); }
+      \draw[famcolor, thin, dashed] (1.9,\H-2.5) -- (4.2,\H-2.1);
+    \else\expandafter\ifx\cardart\art3d
+      % 3D: cubo isométrico
+      \fill[famcolor!30!white] (2.9,7.85) -- (3.85,7.35) -- (2.9,6.85) -- (1.95,7.35) -- cycle;
+      \fill[famcolor!60!black] (1.95,7.35) -- (2.9,6.85) -- (2.9,5.55) -- (1.95,6.05) -- cycle;
+      \fill[famcolor!80!white] (2.9,6.85) -- (3.85,7.35) -- (3.85,6.05) -- (2.9,5.55) -- cycle;
+      \draw[famcolor!90!black, thin] (2.9,7.85) -- (3.85,7.35) -- (3.85,6.05) -- (2.9,5.55) -- (1.95,6.05) -- (1.95,7.35) -- cycle;
+      \draw[famcolor!90!black, thin] (1.95,7.35) -- (2.9,6.85) -- (3.85,7.35);
+      \draw[famcolor!90!black, thin] (2.9,6.85) -- (2.9,5.55);
+    \fi\fi\fi\fi\fi\fi
+  \end{scope}
+
+  % Tipo y categoría
+  \node[anchor=west, font=\scriptsize] at (0.35,\H-4.45) {\textbf{Type:} \cardmodality \quad \textbf{Category:} \cardcategory};
+
+  % Habilidad
+  \fill[white, rounded corners=3pt] (0.35,\H-5.9) rectangle (\W-0.35,\H-4.7);
+  \draw[famcolor, thin, rounded corners=3pt] (0.35,\H-5.9) rectangle (\W-0.35,\H-4.7);
+  \node[anchor=west, font=\scriptsize\bfseries, text=famcolor!80!black] at (0.5,\H-5.1) {Ability: Architecture};
+  \node[anchor=north west, text width=5.2cm, font=\scriptsize] at (0.5,\H-5.25) {\cardability};
+
+  % Hardware mínimo (ataque)
+  \node[anchor=west, font=\scriptsize\bfseries] at (0.35,\H-6.35) {Min. hardware};
+  \node[anchor=west, font=\scriptsize] at (0.35,\H-6.68) {\cardhardware};
+
+  % Debilidad, resistencia y retirada
+  \node[anchor=west, font=\tiny] at (0.35,\H-7.05) {\textbf{Weakness:} \cardweak};
+  \node[anchor=west, font=\tiny] at (0.35,\H-7.35) {\textbf{Resistance:} \cardstrong};
+  \node[anchor=west, font=\tiny] at (0.35,\H-7.65) {\textbf{Retreat:}};
+  \foreach \i in {1,2,3,4}{
+    \ifnum\i>\cardretreat\else
+      \fill[famcolor] (\i*0.22+1.6,\H-7.65) circle (0.07);
+    \fi
+  }
+
+  % Frase
+  \node[font=\scriptsize\itshape, text width=5.4cm, align=center] at (\W/2,\H-8.2) {\cardflavor};
+
+  % Pie
+  \node[anchor=west, font=\tiny] at (0.35,0.4) {\cardid};
+  \node[anchor=east, font=\tiny] at (\W-0.35,0.4) {\cardlicense \quad \cardsource};
+\end{tikzpicture}
+\end{document}
