@@ -15,5 +15,3 @@ Kokoro is an open-weight TTS model released under Apache 2.0, so it can also be 
 Our Pokémon for this one: Jigglypuff, the one that sings to sleep.
 
 Model card: https://huggingface.co/hexgrad/Kokoro-82M
-
-#AI #TTS #OpenSource

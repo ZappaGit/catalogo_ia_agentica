@@ -10,7 +10,7 @@
 
 ---
 
-## Texto para LinkedIn
+## Resumen
 
 Le pasas una nota de voz y te devuelve el texto, en un portátil sin tarjeta gráfica.
 
@@ -25,8 +25,6 @@ Whisper large-v3-turbo es el modelo abierto de reconocimiento de voz de OpenAI. 
 🤓 **Curiosidad:** la propia ficha de OpenAI avisa de que puede "alucinar": escribir texto que nunca se dijo en el audio.
 
 Ficha del modelo: https://huggingface.co/openai/whisper-large-v3-turbo
-
-#SpeechToText #Whisper #OpenSource
 
 ---
 

@@ -8,7 +8,7 @@
 
 ---
 
-## LinkedIn text
+## Summary
 
 A model that speaks with 82 million parameters. It fits on your laptop.
 
@@ -24,8 +24,6 @@ Kokoro is an open-source text-to-speech (TTS) model, with weights published unde
 🤓 **Curiosity:** "kokoro" means "heart" or "spirit" in Japanese, and it is also the name of an AI in the Terminator saga.
 
 Model card and demo: https://huggingface.co/hexgrad/Kokoro-82M
-
-#AI #TTS #GenerativeAI
 
 ---
 

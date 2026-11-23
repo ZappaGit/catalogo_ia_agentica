@@ -8,7 +8,7 @@
 
 ---
 
-## LinkedIn text
+## Summary
 
 One model, two ways of thinking: Qwen3-8B switches between reasoning step by step and answering quickly, with the same set of weights.
 
@@ -24,8 +24,6 @@ Qwen3-8B is an open-weight causal language model (text generation) from the Qwen
 🤓 **Curiosity:** you can switch mode mid-conversation by adding `/think` or `/no_think` to your message.
 
 Model card and example: https://huggingface.co/Qwen/Qwen3-8B
-
-#LLM #AI #OpenSource
 
 ---
 

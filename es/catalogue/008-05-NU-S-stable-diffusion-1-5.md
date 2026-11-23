@@ -13,5 +13,3 @@ Stable Diffusion 1.5 es un modelo de texto a imagen de unos 0,9 mil millones de 
 Nuestras familias para este modelo: Starter · nivel NU · Difusión · línea Stable Diffusion 1.x.
 
 Ficha del modelo: https://huggingface.co/stable-diffusion-v1-5/stable-diffusion-v1-5
-
-#ImageGeneration #AI #OpenSource

@@ -10,7 +10,7 @@
 
 ---
 
-## LinkedIn text
+## Summary
 
 The model that made local image generation popular, run on a laptop with no graphics card: one image took 7 minutes.
 
@@ -26,8 +26,6 @@ Stable Diffusion 1.5 is a text-to-image model with about 0.9 billion parameters.
 🤓 **Curiosity:** the image on this run came out as a red ring on a dark textured background. The prompt asked for a white background, so the model followed "red circle" and not the rest.
 
 Model card: https://huggingface.co/stable-diffusion-v1-5/stable-diffusion-v1-5
-
-#ImageGeneration #AI #OpenSource
 
 ---
 
@@ -161,7 +159,7 @@ The prompt asked for a red circle on a white background. The model drew the circ
 
 ## Pending
 
-- **Authors and paper:** the model card's authors and the original paper have not been read. Check them before stating the organization history in the LinkedIn text.
+- **Authors and paper:** the model card's authors and the original paper have not been read. Check them before stating the organization history in the summary.
 - **Text encoder:** the exact CLIP model is not named here; check the repository's `text_encoder` folder before naming it.
 - **Process memory:** the 2.78 GB is the weights in the runtime's report. Measure the peak RAM of the process (for example with Task Manager during the run) before giving a total.
 - **Sampler default:** the log says Euler A; verify the default in `sd-cli -h` before writing it as a fixed setting.

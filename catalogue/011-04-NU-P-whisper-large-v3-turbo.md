@@ -14,5 +14,3 @@ Whisper large-v3-turbo is OpenAI's open speech recognition model (audio to text)
 Our families for this one: Paradox · NU tier · Audio to text · Transformer encoder-decoder.
 
 Model card: https://huggingface.co/openai/whisper-large-v3-turbo
-
-#SpeechToText #Whisper #OpenSource

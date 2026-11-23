@@ -10,7 +10,7 @@
 
 ---
 
-## LinkedIn text
+## Summary
 
 A voice that sings, speaks and beatboxes with no neural network and no recorded samples.
 
@@ -25,8 +25,6 @@ CHIMERA is a voice synthesizer that runs in the browser. Every sound comes from 
 🤓 **Curiosity:** the same engine does a songbird, a seal, an alligator and an elephant. The elephant's trumpet is modelled as a lip reed at the base of a long nasal tube.
 
 Repository and demo: https://github.com/jamesondh/chimera-vocal-synth
-
-#VoiceSynthesis #WebAssembly #OpenSource
 
 ---
 

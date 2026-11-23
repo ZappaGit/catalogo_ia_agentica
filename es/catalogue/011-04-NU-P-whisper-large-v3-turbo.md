@@ -14,5 +14,3 @@ Whisper large-v3-turbo es el modelo abierto de reconocimiento de voz (audio a te
 Nuestras familias para este: Paradox · tier NU · Audio a texto · Transformer codificador-decodificador.
 
 Ficha del modelo: https://huggingface.co/openai/whisper-large-v3-turbo
-
-#SpeechToText #Whisper #OpenSource

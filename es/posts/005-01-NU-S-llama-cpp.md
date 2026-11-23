@@ -9,7 +9,7 @@
 
 ---
 
-## Texto para LinkedIn
+## Resumen
 
 Ejecutar un modelo de lenguaje en una Raspberry Pi 5 sin GPU, con un único programa en C++.
 
@@ -25,8 +25,6 @@ llama.cpp es un motor de inferencia de código abierto, escrito en C/C++, que ej
 🤓 **Curiosidad:** la última versión en el momento de la consulta era la v0.9.0 (2026-11-04), y el repositorio tenía unas 133.758 estrellas (API de GitHub, foto del 2026-11-08).
 
 Repositorio: https://github.com/ggml-org/llama.cpp
-
-#LLM #AI #OpenSource
 
 ---
 

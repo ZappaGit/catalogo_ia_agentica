@@ -9,7 +9,7 @@
 
 ---
 
-## LinkedIn text
+## Summary
 
 The most downloaded model in our Hugging Face snapshot, and it does not write or speak: it turns a sentence into a list of 384 numbers.
 
@@ -25,8 +25,6 @@ all-MiniLM-L6-v2 is an embedding model with 23 million parameters. It maps a sen
 🤓 **Curiosity:** the card lists 1,170,060,424 training pairs, the largest source being about 726 million Reddit comments. The model was trained for a similarity task, not to write text.
 
 Model card: https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2
-
-#Embeddings #AI #OpenSource
 
 ---
 

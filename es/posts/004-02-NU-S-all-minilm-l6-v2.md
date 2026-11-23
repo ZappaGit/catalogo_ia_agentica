@@ -9,7 +9,7 @@
 
 ---
 
-## Texto de LinkedIn
+## Resumen
 
 El modelo más descargado de nuestro snapshot de Hugging Face, y no escribe ni habla: convierte una frase en una lista de 384 números.
 
@@ -25,8 +25,6 @@ all-MiniLM-L6-v2 es un modelo de embeddings con 23 millones de parámetros. Asig
 🤓 **Curiosidad:** la ficha lista 1.170.060.424 pares de entrenamiento, y la fuente más grande son unos 726 millones de comentarios de Reddit. El modelo se entrenó para una tarea de similitud, no para escribir texto.
 
 Ficha del modelo: https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2
-
-#Embeddings #AI #OpenSource
 
 ---
 

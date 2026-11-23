@@ -13,5 +13,3 @@ Es la versión cuantizada de Z-Image-Turbo. El modelo de difusión se comprime d
 Nuestras familias para este modelo: Paradox · nivel UU · Imagen · Transformer de difusión.
 
 Ficha del modelo: https://huggingface.co/leejet/Z-Image-Turbo-GGUF
-
-#ImageGeneration #AI #OpenSource

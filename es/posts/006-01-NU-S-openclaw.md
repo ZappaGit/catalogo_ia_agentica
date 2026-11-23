@@ -9,7 +9,7 @@
 
 ---
 
-## Texto para LinkedIn
+## Resumen
 
 Un asistente de IA que vive en tu propio ordenador y responde en las aplicaciones de mensajería que ya usas.
 
@@ -24,8 +24,6 @@ OpenClaw es un asistente de código abierto (licencia MIT) que se ejecuta en tu 
 Nuestras familias para este: Starter · tier NU (provisional, es un asistente, no un modelo) · Texto.
 
 Repositorio: https://github.com/openclaw/openclaw
-
-#AI #Agents #OpenSource
 
 ---
 

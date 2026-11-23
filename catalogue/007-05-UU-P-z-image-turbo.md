@@ -13,5 +13,3 @@ Z-Image-Turbo is a text-to-image model from Alibaba's Tongyi-MAI team. It is a d
 Our families for this one: Paradox · UU tier · Image · Diffusion transformer.
 
 Model card: https://huggingface.co/Tongyi-MAI/Z-Image-Turbo
-
-#ImageGeneration #AI #OpenSource

@@ -13,5 +13,3 @@ llama.cpp is an open-source inference engine written in C/C++. It is not a model
 Our families for this one: Starter · NU tier (provisional, it is a runtime, not a model) · Text.
 
 Repository: https://github.com/ggml-org/llama.cpp
-
-#LLM #AI #OpenSource

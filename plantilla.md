@@ -8,7 +8,7 @@
 
 ---
 
-## LinkedIn text
+## Summary
 
 {One-line hook.}
 
@@ -24,8 +24,6 @@
 🤓 **Curiosity:** {fact}
 
 Model card and demo: {link to the model card}
-
-{Hashtags: maximum 3}
 
 ---
 

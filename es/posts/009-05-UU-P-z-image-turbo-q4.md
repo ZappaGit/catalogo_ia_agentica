@@ -13,7 +13,7 @@
 
 ---
 
-## Texto para LinkedIn
+## Resumen
 
 El mismo modelo de imagen de 6.000 millones de parámetros del artículo 007, cuantizado a 4 bits, ahora dibuja en un portátil sin tarjeta gráfica: 8 minutos por imagen.
 
@@ -29,8 +29,6 @@ Es la versión cuantizada de Z-Image-Turbo. El modelo de difusión se comprime d
 🤓 **Curiosidad:** la imagen de esta ejecución es un anillo rojo limpio sobre fondo blanco, más cercano al prompt que el resultado oscuro y con textura de Stable Diffusion 1.5 en el artículo 008.
 
 Ficha del modelo: https://huggingface.co/leejet/Z-Image-Turbo-GGUF
-
-#ImageGeneration #AI #OpenSource
 
 ---
 

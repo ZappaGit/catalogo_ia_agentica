@@ -13,5 +13,3 @@ OpenClaw es un asistente de código abierto (licencia MIT). Un Gateway local lo 
 Nuestras familias para este: Starter · tier NU (provisional, es un asistente, no un modelo) · Texto.
 
 Repositorio: https://github.com/openclaw/openclaw
-
-#AI #Agents #OpenSource

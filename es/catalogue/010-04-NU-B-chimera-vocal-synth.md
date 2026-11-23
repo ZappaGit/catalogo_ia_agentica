@@ -14,5 +14,3 @@ Nuestras familias para este: Ultra Beast · tier NU (provisional, es una simulac
 
 Demo: https://chimera-vocal-synth.vercel.app/
 Repositorio: https://github.com/jamesondh/chimera-vocal-synth
-
-#VoiceSynthesis #WebAssembly #OpenSource

@@ -13,5 +13,3 @@ Stable Diffusion 1.5 is a text-to-image model with about 0.9 billion parameters.
 Our families for this one: Starter · NU tier · Diffusion · Stable Diffusion 1.x line.
 
 Model card: https://huggingface.co/stable-diffusion-v1-5/stable-diffusion-v1-5
-
-#ImageGeneration #AI #OpenSource

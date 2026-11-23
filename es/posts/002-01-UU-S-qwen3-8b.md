@@ -8,7 +8,7 @@
 
 ---
 
-## Texto de LinkedIn
+## Resumen
 
 Un modelo, dos formas de pensar: Qwen3-8B alterna entre razonar paso a paso y responder rápido, con el mismo conjunto de pesos.
 
@@ -24,8 +24,6 @@ Qwen3-8B es un modelo de lenguaje causal de pesos abiertos (generación de texto
 🤓 **Curiosidad:** puedes cambiar de modo a mitad de conversación añadiendo `/think` o `/no_think` a tu mensaje.
 
 Ficha y ejemplo: https://huggingface.co/Qwen/Qwen3-8B
-
-#LLM #IA #OpenSource
 
 ---
 

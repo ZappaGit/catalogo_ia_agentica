@@ -13,5 +13,3 @@ all-MiniLM-L6-v2 is an embedding model with 22.7 million parameters. It maps a s
 Our families for this one: Starter · NU tier · Embeddings · Encoder.
 
 Model card: https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2
-
-#Embeddings #AI #OpenSource

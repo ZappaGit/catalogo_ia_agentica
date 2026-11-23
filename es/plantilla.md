@@ -8,7 +8,7 @@
 
 ---
 
-## Texto de LinkedIn
+## Resumen
 
 {Gancho de una línea.}
 
@@ -24,8 +24,6 @@
 🤓 **Curiosidad:** {dato}
 
 Ficha y demo: {enlace a la ficha}
-
-{Hashtags: máximo 3}
 
 ---
 

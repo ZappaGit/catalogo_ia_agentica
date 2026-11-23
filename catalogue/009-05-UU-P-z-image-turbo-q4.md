@@ -13,5 +13,3 @@ This is the quantized version of Z-Image-Turbo. The diffusion model is compresse
 Our families for this one: Paradox · UU tier · Image · Diffusion transformer.
 
 Model card: https://huggingface.co/leejet/Z-Image-Turbo-GGUF
-
-#ImageGeneration #AI #OpenSource

@@ -1,6 +1,6 @@
 # IA 365 modelos
 
-Serie de publicaciones en LinkedIn para divulgar modelos generativos: uno por día, aproximadamente.
+Serie de artículos para divulgar modelos generativos: uno por día, aproximadamente.
 
 ## Objetivo
 
@@ -26,7 +26,7 @@ Explicar qué es cada modelo, con datos verificados, de forma que cualquiera lo 
 - **Fecha de snapshot**: los datos de descargas o popularidad cambian; se indica la fecha de consulta.
 - **Idioma**: español.
 - **Pokémon**: cada modelo recibe un Pokémon cuyo tipo o rasgo encaje con lo que hace el modelo (por ejemplo, un TTS puede ser un Pokémon "de voz"). La asociación es un recurso de divulgación; no implica relación oficial con The Pokémon Company ni con Nintendo. Pokémon es marca registrada de sus propietarios: no se usan sprites ni artes oficiales en las publicaciones, solo el nombre y la idea.
-- **Formato LinkedIn**: un gancho en la primera línea, 4–6 bloques cortos, un dato de hardware destacado y un enlace a la ficha. Sin más de 3 hashtags.
+- **Formato del resumen**: un gancho en la primera línea, 4–6 bloques cortos, un dato de hardware destacado y un enlace a la ficha.
 
 ## Código de identificación
 

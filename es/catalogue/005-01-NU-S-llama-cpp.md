@@ -13,5 +13,3 @@ llama.cpp es un motor de inferencia de código abierto escrito en C/C++. No es u
 Nuestras familias para este: Starter · tier NU (provisional, es un runtime, no un modelo) · Texto.
 
 Repositorio: https://github.com/ggml-org/llama.cpp
-
-#LLM #AI #OpenSource

@@ -10,7 +10,7 @@
 
 ---
 
-## Texto para LinkedIn
+## Resumen
 
 Una voz que canta, habla y hace beatbox sin red neuronal y sin muestras grabadas.
 
@@ -25,8 +25,6 @@ CHIMERA es un sintetizador de voz que funciona en el navegador. Cada sonido sale
 🤓 **Curiosidad:** el mismo motor hace un pájaro cantor, una foca, un caimán y un elefante. La trompeta del elefante se modela como una lengüeta labial en la base de un tubo nasal largo.
 
 Repositorio y demo: https://github.com/jamesondh/chimera-vocal-synth
-
-#VoiceSynthesis #WebAssembly #OpenSource
 
 ---
 

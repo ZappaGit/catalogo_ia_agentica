@@ -8,7 +8,7 @@
 
 ---
 
-## Texto de LinkedIn
+## Resumen
 
 Un modelo que habla con 82 millones de parámetros. Cabe en tu portátil.
 
@@ -24,8 +24,6 @@ Kokoro es un modelo de texto a voz (TTS) de código abierto, con pesos publicado
 🤓 **Curiosidad:** "kokoro" significa "corazón" o "espíritu" en japonés, y es también el nombre de una IA de la saga Terminator.
 
 Ficha y demo: https://huggingface.co/hexgrad/Kokoro-82M
-
-#IA #TTS #IAGenerativa
 
 ---
 

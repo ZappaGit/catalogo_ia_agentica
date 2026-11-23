@@ -13,7 +13,7 @@
 
 ---
 
-## LinkedIn text
+## Summary
 
 The same 6-billion-parameter image model as article 007, quantized to 4 bits, now draws on a laptop with no graphics card: 8 minutes per image.
 
@@ -29,8 +29,6 @@ This is the quantized version of Z-Image-Turbo. The diffusion model is compresse
 🤓 **Curiosity:** the image on this run is a clean red ring on a white background, which is closer to the prompt than the dark, textured result of Stable Diffusion 1.5 in article 008.
 
 Model card: https://huggingface.co/leejet/Z-Image-Turbo-GGUF
-
-#ImageGeneration #AI #OpenSource
 
 ---
 

@@ -10,7 +10,7 @@
 
 ---
 
-## Texto para LinkedIn
+## Resumen
 
 Un modelo de imagen de 6.000 millones de parámetros que dibuja en 8 pasos, cuando su versión base necesita 50.
 
@@ -26,8 +26,6 @@ Z-Image-Turbo es un modelo de texto a imagen del equipo Tongyi-MAI de Alibaba. E
 🤓 **Curiosidad:** el modelo se destiló de un modelo base de 50 pasos con guidance, y la versión Turbo funciona con escala de guidance 0. Las "8 NFE" (evaluaciones de la red) de la tarjeta corresponden a 9 pasos en el código, que hacen 8 pasadas del transformer.
 
 Tarjeta del modelo: https://huggingface.co/Tongyi-MAI/Z-Image-Turbo
-
-#ImageGeneration #AI #OpenSource
 
 ---
 

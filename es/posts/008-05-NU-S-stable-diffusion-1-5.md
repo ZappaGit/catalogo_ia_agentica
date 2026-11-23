@@ -10,7 +10,7 @@
 
 ---
 
-## Texto para LinkedIn
+## Resumen
 
 El modelo que popularizó la generación local de imágenes, ejecutado en un portátil sin tarjeta gráfica: una imagen tardó 7 minutos.
 
@@ -26,8 +26,6 @@ Stable Diffusion 1.5 es un modelo de texto a imagen de unos 0,9 mil millones de 
 🤓 **Curiosidad:** la imagen de esta ejecución salió como un anillo rojo sobre un fondo oscuro con textura. El prompt pedía fondo blanco, así que el modelo siguió "círculo rojo" y no el resto.
 
 Ficha del modelo: https://huggingface.co/stable-diffusion-v1-5/stable-diffusion-v1-5
-
-#ImageGeneration #AI #OpenSource
 
 ---
 
@@ -160,7 +158,7 @@ El prompt pedía un círculo rojo sobre fondo blanco. El modelo dibujó el círc
 
 ## Pendiente
 
-- **Autores y artículo:** no se han leído los autores de la ficha ni el artículo original. Comprobarlos antes de contar la historia de la organización en el texto de LinkedIn.
+- **Autores y artículo:** no se han leído los autores de la ficha ni el artículo original. Comprobarlos antes de contar la historia de la organización en el resumen.
 - **Codificador de texto:** no se nombra aquí el CLIP exacto; revisar la carpeta `text_encoder` del repositorio antes de nombrarlo.
 - **Memoria del proceso:** los 2,78 GB son los pesos según el informe del runtime. Medir el pico de RAM del proceso (por ejemplo, con el Administrador de tareas durante la ejecución) antes de dar un total.
 - **Muestreador por defecto:** el registro dice Euler A; verificar el valor por defecto en `sd-cli -h` antes de escribirlo como ajuste fijo.

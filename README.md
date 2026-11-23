@@ -1,6 +1,6 @@
 # IA 365 models
 
-A series of LinkedIn posts explaining generative models: one about every day.
+A series of articles explaining generative models: one about every day.
 
 > Spanish copy of the full repository: [`es/`](es/README.md)
 
@@ -26,9 +26,9 @@ Explain what each model is, with verified data, so that anyone can understand it
 - **Verification**: every data point comes from the model card on Hugging Face or another official source, cited in the article. Anything that is an estimate is marked as such. Anything not verified is listed as pending.
 - **License**: stated explicitly, because it determines commercial use.
 - **Snapshot date**: download and popularity figures change; the consultation date is recorded.
-- **Language**: English. The full article in `posts/` is the source of truth; `catalogue/` holds the LinkedIn summaries.
+- **Language**: English. The full article in `posts/` is the source of truth; `catalogue/` holds the short summaries.
 - **Pokémon**: each model is given a Pokémon whose type or trait fits what the model does (for example, a TTS model can be a "voice" Pokémon). The association is an educational resource; it does not imply any official relationship with The Pokémon Company or Nintendo. Pokémon is a registered trademark of its owners: no sprites or official artwork are used in the posts, only the name and the idea.
-- **LinkedIn format**: a hook on the first line, 4–6 short blocks, one highlighted hardware figure and a link to the model card. No more than 3 hashtags.
+- **Summary format**: a hook on the first line, 4–6 short blocks, one highlighted hardware figure and a link to the model card.
 
 ## Identification code
 
@@ -47,7 +47,7 @@ Example: `01-UU-S-002` is Qwen3-8B (text, 8.2 B, Starter).
 - `plantilla.md`: template for each article.
 - `indice.md`: schedule and status of each model.
 - `posts/`: one file per model, named `NNN-CC-TIER-FAM-model-slug.md`.
-- `catalogue/`: English LinkedIn summaries, one per model, ready to publish.
+- `catalogue/`: short English summaries, one per model, ready to publish.
 - `carta/`: LaTeX model cards (one per model; `carta/pruebas/` holds test cards).
 - `glosario.md`: glossary of technical terms.
 - `es/`: complete Spanish copy of the repository, for reading.

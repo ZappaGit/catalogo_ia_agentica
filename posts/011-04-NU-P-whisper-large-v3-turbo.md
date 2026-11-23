@@ -10,7 +10,7 @@
 
 ---
 
-## LinkedIn text
+## Summary
 
 Drop in a voice note and get the text back, on a laptop with no graphics card.
 
@@ -25,8 +25,6 @@ Whisper large-v3-turbo is OpenAI's open speech recognition model. It transcribes
 🤓 **Curiosity:** OpenAI's own card warns that it can "hallucinate": write text that was never said in the audio.
 
 Model card: https://huggingface.co/openai/whisper-large-v3-turbo
-
-#SpeechToText #Whisper #OpenSource
 
 ---
 

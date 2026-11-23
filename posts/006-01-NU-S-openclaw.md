@@ -9,7 +9,7 @@
 
 ---
 
-## LinkedIn text
+## Summary
 
 An AI assistant that lives on your own computer and answers in the messaging apps you already use.
 
@@ -23,8 +23,6 @@ OpenClaw is an open-source AI assistant that runs on your own hardware. A local 
 🤓 **Curiosity:** the project has about 394,000 stars on GitHub (snapshot 2026-11-08). The README says inbound messages from unknown senders are treated as untrusted and are paired before use.
 
 Repository: https://github.com/openclaw/openclaw
-
-#AI #Agents #OpenSource
 
 ---
 

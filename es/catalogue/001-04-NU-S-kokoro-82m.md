@@ -15,5 +15,3 @@ Kokoro es un modelo de texto a voz (TTS) de pesos abiertos, publicado bajo licen
 Nuestro Pokémon para este: Jigglypuff, el que canta para dormir.
 
 Ficha del modelo: https://huggingface.co/hexgrad/Kokoro-82M
-
-#IA #TTS #OpenSource

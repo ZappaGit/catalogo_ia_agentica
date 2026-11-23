@@ -9,7 +9,7 @@
 
 ---
 
-## LinkedIn text
+## Summary
 
 Run a language model on a Raspberry Pi 5 with no GPU, using a single C++ program.
 
@@ -25,8 +25,6 @@ llama.cpp is an open-source inference engine, written in C/C++, that runs langua
 🤓 **Curiosity:** the latest release at the time of consulting was v0.9.0 (2026-11-04), and the repository had about 133,758 stars (GitHub API, snapshot 2026-11-08).
 
 Repository: https://github.com/ggml-org/llama.cpp
-
-#LLM #AI #OpenSource
 
 ---
 
