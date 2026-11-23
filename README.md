@@ -85,3 +85,9 @@ Consequences for the articles:
 - All series models tested here run on CPU. Models with more than a few billion parameters do not fit in the available RAM in BF16.
 - Minimum hardware cited in an article must be marked as an **estimate** if it has not been measured on this machine.
 - For large models (for example, Qwen3-8B), testing will be done with a smaller or quantized version, or on another machine with an NVIDIA GPU.
+
+## License
+
+The content of this repository (articles, summaries, glossary, notes and cards) is licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). You may reuse and adapt it, including commercially, as long as you give credit. See [LICENSE](LICENSE).
+
+This license does not cover the models described in the series: each model has its own license, stated in its article.

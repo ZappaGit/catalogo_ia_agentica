@@ -78,3 +78,9 @@ Consecuencias para los artículos:
 - Todos los modelos de la serie que se prueben aquí corren en CPU. Los modelos de más de unos pocos miles de millones de parámetros no caben en la RAM disponible en BF16.
 - El hardware mínimo que cite un artículo debe marcarse como **estimación** si no se ha medido en este equipo.
 - Para modelos grandes (por ejemplo, Qwen3-8B), la prueba se hará con una versión más pequeña o cuantizada, o en otra máquina con GPU NVIDIA.
+
+## Licencia
+
+El contenido de este repositorio (artículos, resúmenes, glosario, notas y cartas) se publica bajo [Creative Commons Atribución 4.0 Internacional (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.es). Puedes reutilizarlo y adaptarlo, también con fines comerciales, siempre que cites la fuente. Ver [LICENSE](../LICENSE).
+
+Esta licencia no cubre los modelos que se describen en la serie: cada modelo tiene su propia licencia, indicada en su artículo.

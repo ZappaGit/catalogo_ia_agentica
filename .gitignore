@@ -1,6 +1,8 @@
 # Local labs (virtual environments, nested repos and generated audio): not part of the repo
 lab-llm/
 lab-tts/
+lab-img/
+lab-asr/
 
 # Python / environments
 .venv/
@@ -23,3 +25,6 @@ Thumbs.db
 # Local Claude Code instructions: kept on disk, not in the repo
 /CLAUDE.md
 /es/CLAUDE.md
+
+# Notes for other private projects: never published
+/Claude outputs/
