@@ -2,7 +2,7 @@
 
 Explicaciones de los términos que aparecen en los artículos de la serie. Cada término enlaza a los artículos donde se usa.
 
-Artículos: [001 · Kokoro-82M](posts/001-04-NU-S-kokoro-82m.md) · [002 · Qwen3-8B](posts/002-01-UU-S-qwen3-8b.md) · [003 · Qwen3-0.6B](posts/003-01-NU-S-qwen3-0-6b.md)
+Artículos: [001 · Kokoro-82M](posts/001-04-NU-S-kokoro-82m.md) · [002 · Qwen3-8B](posts/002-01-UU-S-qwen3-8b.md) · [003 · Qwen3-0.6B](posts/003-01-NU-S-qwen3-0-6b.md) · [004 · all-MiniLM-L6-v2](posts/004-02-NU-S-all-minilm-l6-v2.md) · [005 · llama.cpp](posts/005-01-NU-S-llama-cpp.md) · [006 · OpenClaw](posts/006-01-NU-S-openclaw.md) · [007 · Z-Image-Turbo](posts/007-05-UU-P-z-image-turbo.md) · [008 · Stable Diffusion 1.5](posts/008-05-NU-S-stable-diffusion-1-5.md) · [009 · Z-Image-Turbo Q4](posts/009-05-UU-P-z-image-turbo-q4.md) · [010 · CHIMERA](posts/010-04-NU-B-chimera-vocal-synth.md) · [011 · Whisper large-v3-turbo](posts/011-04-NU-P-whisper-large-v3-turbo.md)
 
 ---
 
@@ -14,7 +14,7 @@ Aparece en: [001 · Kokoro-82M](posts/001-04-NU-S-kokoro-82m.md)
 
 ### ASR (Automatic Speech Recognition)
 El proceso inverso al TTS: convertir voz en texto. Whisper es un ejemplo.
-Aparece en: [001 · Kokoro-82M](posts/001-04-NU-S-kokoro-82m.md) (como contraste)
+Aparece en: [001 · Kokoro-82M](posts/001-04-NU-S-kokoro-82m.md) (como contraste) · [011 · Whisper large-v3-turbo](posts/011-04-NU-P-whisper-large-v3-turbo.md)
 
 ### Normalización de texto
 Paso previo al TTS que convierte abreviaturas, números y símbolos en palabras ("Dr. 3" → "doctor tres").
@@ -29,8 +29,8 @@ Entonación, ritmo, pausas y énfasis de una frase. El módulo de prosodia de un
 Aparece en: [001 · Kokoro-82M](posts/001-04-NU-S-kokoro-82m.md)
 
 ### Espectrograma
-Representación del sonido como intensidad de cada frecuencia a lo largo del tiempo. Es la "imagen" intermedia que muchos modelos de voz generan antes de llegar a la onda de audio.
-Aparece en: [001 · Kokoro-82M](posts/001-04-NU-S-kokoro-82m.md)
+Representación del sonido como intensidad de cada frecuencia a lo largo del tiempo. Es la "imagen" intermedia que muchos modelos de voz generan antes de llegar a la onda de audio. Whisper hace lo contrario: convierte el audio en un espectrograma log-Mel (frecuencias en la escala Mel, más cercana al oído humano) y lee el texto a partir de él.
+Aparece en: [001 · Kokoro-82M](posts/001-04-NU-S-kokoro-82m.md) · [011 · Whisper large-v3-turbo](posts/011-04-NU-P-whisper-large-v3-turbo.md)
 
 ### STFT e iSTFT
 - **STFT** (transformada de Fourier de tiempo corto): pasa una señal de audio a espectrograma.
@@ -49,6 +49,42 @@ Aparece en: [001 · Kokoro-82M](posts/001-04-NU-S-kokoro-82m.md)
 Arquitectura de TTS publicada en 2023 (Li et al.). Tiene un codificador de texto, un módulo de prosodia, un módulo que genera el estilo de la voz y un decodificador.
 Kokoro toma solo el decodificador y el enfoque ISTFTNet; no incluye el módulo de difusión ni el codificador publicado.
 Aparece en: [001 · Kokoro-82M](posts/001-04-NU-S-kokoro-82m.md)
+
+### Codificador-decodificador (sequence-to-sequence)
+Un Transformer con dos partes: el codificador lee toda la entrada (en Whisper, 30 segundos de audio) y el decodificador escribe la salida token a token mientras la consulta. Whisper large-v3-turbo mantiene 32 capas de codificador y recorta el decodificador a 4.
+Aparece en: [011 · Whisper large-v3-turbo](posts/011-04-NU-P-whisper-large-v3-turbo.md)
+
+### RTF (factor de tiempo real)
+Tiempo de procesamiento dividido entre la duración del audio. Por debajo de 1, el sistema va más rápido que el tiempo real; 1 significa que tarda lo mismo que dura el audio.
+Aparece en: [011 · Whisper large-v3-turbo](posts/011-04-NU-P-whisper-large-v3-turbo.md)
+
+### Alucinación (en reconocimiento de voz)
+Texto de una transcripción que nunca se dijo en el audio. La ficha de Whisper lo atribuye al entrenamiento con grandes cantidades de datos ruidosos.
+Aparece en: [011 · Whisper large-v3-turbo](posts/011-04-NU-P-whisper-large-v3-turbo.md)
+
+### Poda (pruning)
+Quitar partes de un modelo ya entrenado (capas, neuronas) para hacerlo más pequeño y rápido, normalmente seguido de más entrenamiento para recuperar calidad. Whisper large-v3-turbo es un large-v3 podado.
+Aparece en: [011 · Whisper large-v3-turbo](posts/011-04-NU-P-whisper-large-v3-turbo.md)
+
+### Modelado físico (síntesis articulatoria)
+Crear una voz simulando el cuerpo que la produce (pulmones, cuerdas vocales, garganta, lengua, labios, nariz) en lugar de reproducir grabaciones o aprender de datos. Cada control tiene un significado físico, como la posición de la lengua.
+Aparece en: [010 · CHIMERA](posts/010-04-NU-B-chimera-vocal-synth.md)
+
+### Tracto vocal y glotis
+La **glotis** es la abertura entre las cuerdas vocales; al abrirse y cerrarse produce el zumbido de la voz. El **tracto vocal** es el tubo que hay encima (garganta, boca, nariz), cuya forma filtra ese zumbido en vocales y consonantes.
+Aparece en: [010 · CHIMERA](posts/010-04-NU-B-chimera-vocal-synth.md)
+
+### Formante
+Una resonancia del tracto vocal: una banda de frecuencias que la forma del tracto refuerza. Los dos primeros formantes son los que distinguen una vocal de otra.
+Aparece en: [010 · CHIMERA](posts/010-04-NU-B-chimera-vocal-synth.md)
+
+### FDTD (diferencias finitas en el dominio del tiempo)
+Método numérico que simula una onda paso a paso en el tiempo y el espacio. CHIMERA lo usa para calcular la presión y el flujo de aire a lo largo de las secciones del tracto vocal.
+Aparece en: [010 · CHIMERA](posts/010-04-NU-B-chimera-vocal-synth.md)
+
+### WebAssembly y AudioWorklet
+**WebAssembly** (wasm) es un formato de código compilado que los navegadores ejecutan a velocidad casi nativa. Un **AudioWorklet** es el hilo de audio en tiempo real del navegador; necesita un contexto seguro (HTTPS o localhost).
+Aparece en: [010 · CHIMERA](posts/010-04-NU-B-chimera-vocal-synth.md)
 
 ---
 
@@ -80,7 +116,7 @@ Aparece en: [002 · Qwen3-8B](posts/002-01-UU-S-qwen3-8b.md)
 
 ### Soft switch (`/think` y `/no_think`)
 Órdenes que se escriben en el mensaje del usuario para activar o desactivar el razonamiento de Qwen3 turno a turno. Solo funcionan si `enable_thinking=True`; con `enable_thinking=False` se ignoran.
-Aparece en: [002 · Qwen3-8B](posts/002-01-UU-S-qwen3-8b.md), [003 · Qwen3-0.6B](posts/003-01-NU-S-qwen3-0-6b.md)
+Aparece en: [002 · Qwen3-8B](posts/002-01-UU-S-qwen3-8b.md), [003 · Qwen3-0.6B](posts/003-01-NU-S-qwen3-0-6b.md) · [004 · all-MiniLM-L6-v2](posts/004-02-NU-S-all-minilm-l6-v2.md)
 
 ### Thinking mode (modo de razonamiento)
 El modelo genera un bloque de razonamiento antes de la respuesta. Da mejores resultados en matemáticas y código, pero produce salidas más largas y lentas. Qwen3 permite activarlo o desactivarlo.
@@ -182,7 +218,7 @@ Aparece en: [001 · Kokoro-82M](posts/001-04-NU-S-kokoro-82m.md), [002 · Qwen3-
 
 ### Parámetros sin embeddings
 Parámetros del modelo sin contar la tabla de embeddings (la que convierte tokens en vectores). Es una cifra más representativa de la parte "de razonamiento" del modelo cuando el vocabulario es grande. En Qwen3-0.6B, 0,44 B de 0,6 B.
-Aparece en: [003 · Qwen3-0.6B](posts/003-01-NU-S-qwen3-0-6b.md)
+Aparece en: [003 · Qwen3-0.6B](posts/003-01-NU-S-qwen3-0-6b.md) · [004 · all-MiniLM-L6-v2](posts/004-02-NU-S-all-minilm-l6-v2.md)
 
 ### Pesos (weights)
 Los valores concretos de los parámetros, guardados en un archivo. Ocupan la mayor parte de la memoria al ejecutar el modelo.
@@ -202,8 +238,12 @@ Menos bits = menos memoria, con algo de pérdida de calidad.
 Aparece en: [002 · Qwen3-8B](posts/002-01-UU-S-qwen3-8b.md)
 
 ### Cuantización
-Reducir la precisión de los pesos (por ejemplo, de BF16 a INT4) para que el modelo quepa en menos memoria.
-Aparece en: [002 · Qwen3-8B](posts/002-01-UU-S-qwen3-8b.md)
+Reducir la precisión de los pesos (por ejemplo, de BF16 a INT4) para que el modelo quepa en menos memoria. Nombres como Q8_0 o Q4_K_M indican el esquema de cuantización de un archivo GGUF.
+Aparece en: [002 · Qwen3-8B](posts/002-01-UU-S-qwen3-8b.md) · [005 · llama.cpp](posts/005-01-NU-S-llama-cpp.md) · [009 · Z-Image-Turbo Q4](posts/009-05-UU-P-z-image-turbo-q4.md)
+
+### GGUF
+Formato de archivo para guardar modelos cuantizados, con los pesos y los metadatos necesarios para ejecutarlos. Es el formato que lee llama.cpp.
+Aparece en: [005 · llama.cpp](posts/005-01-NU-S-llama-cpp.md) · [009 · Z-Image-Turbo Q4](posts/009-05-UU-P-z-image-turbo-q4.md)
 
 ### Hardware: VRAM y RAM
 - **VRAM**: memoria de la tarjeta gráfica. Es la que más rápido mueve los pesos.
@@ -216,15 +256,79 @@ Aparece en: [001 · Kokoro-82M](posts/001-04-NU-S-kokoro-82m.md), [002 · Qwen3-
 
 ---
 
+## Embeddings y similitud
+
+### Embedding de frase (sentence embedding)
+Vector de longitud fija que representa el significado de una frase o de un texto corto. Textos de significado parecido obtienen vectores cercanos entre sí. Es la salida de modelos de embeddings como all-MiniLM-L6-v2 (384 valores).
+Aparece en: [004 · all-MiniLM-L6-v2](posts/004-02-NU-S-all-minilm-l6-v2.md)
+
+### Similitud coseno (cosine similarity)
+Medida de cuánto apuntan en la misma dirección dos vectores, de -1 (opuestos) a 1 (misma dirección). Es la forma habitual de comparar embeddings de frases.
+Aparece en: [004 · all-MiniLM-L6-v2](posts/004-02-NU-S-all-minilm-l6-v2.md)
+
+### Mean pooling
+Convertir los vectores de todos los tokens en un único vector de frase haciendo su media, ignorando el relleno (con la máscara de atención). Lo usa all-MiniLM-L6-v2.
+Aparece en: [004 · all-MiniLM-L6-v2](posts/004-02-NU-S-all-minilm-l6-v2.md)
+
+### Entrenamiento contrastivo (contrastive training)
+Entrenamiento que enseña al modelo a acercar los vectores de los pares que casan (por ejemplo, una pregunta y su respuesta) y a alejar los de los pares que no casan dentro del mismo lote.
+Aparece en: [004 · all-MiniLM-L6-v2](posts/004-02-NU-S-all-minilm-l6-v2.md)
+
+### Solo codificador (encoder-only)
+Transformer que lee la entrada completa y produce una representación de ella, sin generar texto token a token (a diferencia de un modelo decoder-only). BERT y all-MiniLM-L6-v2 son de este tipo.
+Aparece en: [004 · all-MiniLM-L6-v2](posts/004-02-NU-S-all-minilm-l6-v2.md)
+
+---
+
 ## Otros conceptos
 
 ### Difusión (diffusion)
 Método generativo que parte de ruido y lo refina en varios pasos hasta obtener el resultado. Se usa en generación de imágenes y, en algunos TTS, para el estilo de la voz. Kokoro no lo usa.
-Aparece en: [001 · Kokoro-82M](posts/001-04-NU-S-kokoro-82m.md)
+Aparece en: [001 · Kokoro-82M](posts/001-04-NU-S-kokoro-82m.md) · [007 · Z-Image-Turbo](posts/007-05-UU-P-z-image-turbo.md) · [008 · Stable Diffusion 1.5](posts/008-05-NU-S-stable-diffusion-1-5.md)
+
+### DiT (Diffusion Transformer)
+Modelo de difusión cuyo denoiser es un transformer en lugar de una red convolucional. Los tokens del texto y de la imagen pasan por el transformer, que predice el ruido que se quita en cada paso.
+Aparece en: [007 · Z-Image-Turbo](posts/007-05-UU-P-z-image-turbo.md)
+
+### Destilación (distillation)
+Entrenar un modelo más pequeño o rápido (el alumno) para reproducir el resultado de uno más grande (el maestro) con menos pasos o menos cálculo. Z-Image-Turbo se destila del modelo base Z-Image, de 50 pasos, a 8 pasos.
+Aparece en: [007 · Z-Image-Turbo](posts/007-05-UU-P-z-image-turbo.md)
+
+### Guidance (classifier-free guidance, CFG)
+Ajuste que hace que la imagen siga más de cerca el texto. Suele necesitar una segunda pasada del modelo en cada paso; el modelo Turbo, destilado, funciona con guidance 0, así que no necesita esa pasada.
+Aparece en: [007 · Z-Image-Turbo](posts/007-05-UU-P-z-image-turbo.md)
+
+### VAE (variational autoencoder)
+Red que comprime la imagen en una representación latente más pequeña y la descomprime de vuelta a píxeles. El modelo de difusión trabaja en ese espacio comprimido, lo que ahorra memoria y tiempo.
+Aparece en: [007 · Z-Image-Turbo](posts/007-05-UU-P-z-image-turbo.md)
+
+### Difusión latente (latent diffusion)
+Difusión que trabaja en una representación comprimida (el latente) en lugar de en píxeles. Un VAE comprime la imagen antes de quitar el ruido y decodifica el resultado al final, lo que ahorra memoria y tiempo.
+Aparece en: [008 · Stable Diffusion 1.5](posts/008-05-NU-S-stable-diffusion-1-5.md)
+
+### U-Net
+Red convolucional con un codificador y un decodificador unidos por conexiones de salto. En Stable Diffusion 1.5 es el denoiser: en cada paso predice el ruido que hay que quitar.
+Aparece en: [008 · Stable Diffusion 1.5](posts/008-05-NU-S-stable-diffusion-1-5.md)
+
+### CLIP (codificador de texto)
+Codificador de texto entrenado para emparejar textos con imágenes. En Stable Diffusion 1.5 convierte el prompt en vectores que guían la eliminación de ruido.
+Aparece en: [008 · Stable Diffusion 1.5](posts/008-05-NU-S-stable-diffusion-1-5.md)
+
+### stable-diffusion.cpp
+Runtime de código abierto en C/C++ para modelos de difusión de imagen, con backend CPU, herramienta de línea de comandos y servidor HTTP. Es un runtime, no un modelo; los artículos 008 y 009 lo usan.
+Aparece en: [008 · Stable Diffusion 1.5](posts/008-05-NU-S-stable-diffusion-1-5.md) · [009 · Z-Image-Turbo Q4](posts/009-05-UU-P-z-image-turbo-q4.md)
+
+### llama.cpp
+Motor de inferencia de código abierto en C/C++ que ejecuta modelos en formato GGUF, con una herramienta de línea de comandos y un servidor HTTP con API compatible con OpenAI. Es un runtime, no un modelo.
+Aparece en: [005 · llama.cpp](posts/005-01-NU-S-llama-cpp.md) (también en [003 · Qwen3-0.6B](posts/003-01-NU-S-qwen3-0-6b.md) y [002 · Qwen3-8B](posts/002-01-UU-S-qwen3-8b.md) como opción para ejecutar el modelo)
+
+### Gateway (proceso de control)
+Programa local que se mantiene en ejecución y gestiona sesiones, herramientas, eventos y las conexiones con el exterior (por ejemplo, canales de mensajería). En OpenClaw, el Gateway es el plano de control; la Control UI, la CLI y la TUI se conectan a él. No es un modelo.
+Aparece en: [006 · OpenClaw](posts/006-01-NU-S-openclaw.md)
 
 ### Familias (serie IA 365 modelos)
 Clasificación propia de la serie, inspirada en cómo se agrupan los Pokémon: grupo (arquitectura), categoría (Starter, Legendary, etc.), tier según parámetros (NU, RU, UU, OU, Uber), tipo (modalidad) y línea evolutiva. Es un recurso de divulgación, no una clasificación oficial.
-Aparece en: [003 · Qwen3-0.6B](posts/003-01-NU-S-qwen3-0-6b.md)
+Aparece en: [003 · Qwen3-0.6B](posts/003-01-NU-S-qwen3-0-6b.md) · [004 · all-MiniLM-L6-v2](posts/004-02-NU-S-all-minilm-l6-v2.md)
 
 ### Model card
 Ficha del modelo en Hugging Face, con descripción, uso, licencia y datos de entrenamiento. Es la fuente principal de los datos de la serie.
