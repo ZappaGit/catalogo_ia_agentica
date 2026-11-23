@@ -70,7 +70,7 @@ Qwen3-8B lets the same model reason at length on mathematics or code and answer 
 
 ## How to run it
 
-**Status: tested (one run).** The example and the test with thinking enabled were run on the work machine; the results are in the "Run result" section below. The commands had also been checked earlier against the model card and the PyPI index.
+**Status: generates text on the work machine, but far too slowly to use.** Qwen3-8B produced a response on the work machine (see item "i"), at about 0.1 tokens per second, because most of the weights run from disk. The timings in item "h" come from the Qwen3-0.6B script, not from the 8B. The commands had been checked against the model card and the PyPI index.
 
 ### a. Prerequisites
 
@@ -179,22 +179,52 @@ The expected result is two sentences about language models printed to the consol
 - **In the 0.6B lab:** Qwen3-0.6B takes up about 1.2 GB. The first download on this machine, without a token, had not finished when this was written. *(Pending: note the actual time.)* As a rough estimate proportional to size, the 8B (16.4 GB) would take about 13 times longer.
 - **How to speed it up:** set `HF_TOKEN` (done once per session, never in the code), download at a time with less traffic, or use a quantized version, which is smaller.
 
-### h. Run result
+### h. Run result of Qwen3-0.6B (not 8B)
 
-Two runs with the same model: one without thinking (the example above) and one with `enable_thinking=True`, with `max_new_tokens=256`.
+These timings come from `lab-llm/test_qwen3_06b.py`, the 0.6B script, run on the work machine (Intel Core i7-1355U, 16 GB RAM, CPU only). They are **not** Qwen3-8B results. The 0.6B run printed `parámetros: 0.60 B` and loaded in 4.7 s, because its weights were already in the cache.
+
+Two generations, one without thinking and one with `enable_thinking=True` and `max_new_tokens=256`:
 
 | Run | Tokens generated | Time | Speed |
 |-----|------------------|------|-------|
-| `enable_thinking=False` (limit not stated in the output) | 56 | 10.3 s | 5.4 tokens/s |
+| `enable_thinking=False`, `max_new_tokens=128` | 56 | 10.3 s | 5.4 tokens/s |
 | `enable_thinking=True`, `max_new_tokens=256` | 166 | 33.4 s | 5.0 tokens/s |
 
 What is seen in the output:
 
-- Without thinking, the response is two sentences about LLMs, without `<think>`, as the check above indicates.
-- With thinking, the text starts with a `<think>...</think>` block containing the model's reasoning and then gives the answer. The answer is also two sentences. Generation finished before the 256-token limit.
-- With thinking, the `<think>` block appears in the decoded output. To get only the answer, the text has to be split at `</think>`.
+- Without thinking, the answer is two sentences about LLMs, without `<think>`.
+- With thinking, the text starts with a `<think>` block and the answer comes after it. The 166 tokens are within the 256-token limit.
+- The `<think>` block appears in the decoded output. To get only the answer, the text has to be split at `</think>`.
 
-*(Pending: record the hardware, RAM, and the `transformers` and `torch` versions used for these timings. They were not stated in the test.)*
+### i. Script de prueba en español (`lab-llm/test_qwen3_8b.py`)
+
+Versión en español de la prueba del 0,6 B ([test_qwen3_06b.py](../lab-llm/test_qwen3_06b.py)). Hace lo mismo para el 8B: carga el modelo, genera una respuesta sin razonamiento y otra con razonamiento, y mide los tiempos. El prompt está en español, así que sus tiempos no son directamente comparables con la ejecución en inglés de arriba.
+
+Parámetros al principio del script:
+
+| Parámetro | Valor | Qué controla |
+|-----------|-------|--------------|
+| `MODELO` | `Qwen/Qwen3-8B` | Modelo que se descarga y se carga |
+| `PROMPT` | "Dame una introducción breve a los modelos de lenguaje grandes en dos frases." | Pregunta de prueba |
+| `TIPO_DE_DATO` | `torch.bfloat16` | Precisión de los pesos. En BF16 ocupan ~16,4 GB; en float32, ~33 GB |
+| `DISPOSITIVO` | `"auto"` | `device_map`: reparte los pesos entre GPU y CPU |
+| `MAX_TOKENS_SIN_RAZONAMIENTO` | 128 | Límite de tokens nuevos sin razonamiento |
+| `MAX_TOKENS_CON_RAZONAMIENTO` | 256 | Límite con razonamiento. La ficha sugiere 32.768 para no cortar el razonamiento |
+| `USAR_MUESTREO` | `False` | `False` = decodificación voraz (`do_sample=False`), como en el script del 0,6 B. `True` aplica el muestreo de la ficha |
+| `TEMPERATURA` / `TOP_P` / `TOP_K` | 0,6 / 0,95 / 20 | Solo se usan si `USAR_MUESTREO` es `True`. Son los valores recomendados por la ficha para el modo con razonamiento |
+
+Requisitos: una GPU con unos 24 GB de VRAM. En el equipo de referencia (16 GB de RAM, sin CUDA) el modelo no cabe; ver los límites en [lab-llm/README.md](../lab-llm/README.md).
+
+**Resultado de la ejecución en el equipo de referencia (15,7 GB de RAM, gráfica integrada sin CUDA):**
+
+- **Carga:** 548,1 s, incluida la descarga de 16,4 GB (unos 8 minutos).
+- **Aviso:** `transformers` indicó que algunos parámetros estaban "en el dispositivo meta porque se descargaron a disco y CPU". El modelo no cabe en RAM, así que parte de los pesos se lee desde el disco en cada paso.
+- **Respuesta sin razonamiento (127 tokens):** 2.078 s, unos 0,1 tokens/s. El texto es una lista de cinco puntos sobre los mayores logros de la humanidad, en español.
+- **Respuesta con razonamiento:** no terminó. La ejecución se detuvo a mano durante esa parte, sin salida.
+
+Con esta velocidad, una respuesta corta tarda unos 35 minutos. Es una prueba de que el modelo funciona, no de uso práctico.
+
+*(Pendiente: repetir en una máquina con GPU de unos 24 GB de VRAM, o usar una versión cuantizada (GGUF, 4 bits) en llama.cpp u Ollama en el equipo de referencia, y anotar los tiempos.)*
 
 ---
 
@@ -275,7 +305,7 @@ The repository's chat template adds `<think>\n\n</think>\n\n` when `enable_think
 | Author | Qwen Team | Model card citation; arXiv:2505.09388 | Yes |
 | Organization | Alibaba (mentioned in the model card) | Model card | Partial: affiliation wording pending |
 | Publication date | Not stated in the model card | — | **Pending** |
-| "How to run it" commands | Package names checked on PyPI: `transformers` (5.22.1 latest; 4.51.0+ available), `accelerate` (1.15.0), `torch` (2.15.0) | `pip index versions` | Names yes; example run: yes (see "Run result") |
+| "How to run it" commands | Package names checked on PyPI: `transformers` (5.22.1 latest; 4.51.0+ available), `accelerate` (1.15.0), `torch` (2.15.0) | `pip index versions` | Names yes; 8B example not completed; 0.6B script run (see item "h") |
 | Hidden size / intermediate | 4096 / 12288 | Repository `config.json` | Yes |
 | Dimension per head | 128 | `config.json` (`head_dim`) | Yes |
 | Vocabulary | 151,936 | `config.json` (`vocab_size`) | Yes |
@@ -284,12 +314,15 @@ The repository's chat template adds `<think>\n\n</think>\n\n` when `enable_think
 | MLP activation | SiLU, gated (SwiGLU) | `config.json` (`hidden_act`); `modeling_qwen3.py` | Yes |
 | Normalization | RMSNorm (ε = 1e-6); QK-Norm on Q and K | `config.json`; `modeling_qwen3.py` (`q_norm`, `k_norm`) | Yes |
 | Template with thinking disabled | Adds `<think>\n\n</think>\n\n` to the prompt | `tokenizer_config.json` (`chat_template`) | Yes |
-| Local run timings | 56 tokens in 10.3 s; 166 tokens in 33.4 s | Output of the user's run | Yes (one run, hardware not recorded) |
+| Local run timings (Qwen3-0.6B, not 8B) | 56 tokens in 10.3 s; 166 tokens in 33.4 s | Output of `test_qwen3_06b.py` run by the user (`parámetros: 0.60 B`) | Yes (one run; CPU, 16 GB RAM) |
+| Qwen3-8B local run | Loaded in 548.1 s; 127 tokens in 2,078 s (0.1 tokens/s) without thinking; offload warning | Output of `test_qwen3_8b.py` run by the user | Yes (one run; CPU with disk offload) |
 
 ## Pending
 
 - Publication date of Qwen3 (April 2025 is from memory; the model card does not confirm it).
 - Confirm the wording of the affiliation with Alibaba in the technical report.
-- Record the hardware and versions of the local run (GPU, RAM, `transformers`, `torch`); they were not stated in the output.
+- Get the Qwen3-8B response with thinking enabled. The run was stopped by hand before it finished, so there is no output for that part.
+- Repeat the 8B run on a machine that fits it (GPU of about 24 GB of VRAM), or with a quantized version, and record its timings. The 0.1 tokens/s above is from this machine with disk offload and should not be taken as the model's speed.
+- Record the versions of `transformers` and `torch` used in the 0.6B run (the lab README lists them: 5.22.2 and 2.15.0+cpu).
 - Verify the hardware figures by measuring peak VRAM in BF16 and in 4 bits.
 - The model card asks for `transformers` ≥ 4.51.0 and the latest on PyPI is 5.22.1; check which version the example needs (the `torch_dtype` argument may change in newer versions).
